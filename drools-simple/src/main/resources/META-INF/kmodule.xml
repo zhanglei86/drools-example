@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://www.drools.org/xsd/kmodule">
+    <kbase default="true">
+        <ksession name="defaultStatelessSession" default="true" type="stateless"/>
+        <ksession name="defaultStatefulSession" default="true" type="stateful"/>
+    </kbase>
+    <kbase packages="top.desky.example.drools.simple">
+        <ksession name="SimpleSession"/>
+    </kbase>
+</kmodule>
