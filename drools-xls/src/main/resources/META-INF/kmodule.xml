@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kmodule xmlns="http://www.drools.org/xsd/kmodule">
-    <kbase name="templateTicket" packages="top.desky.example.drools.templates.xls">
-        <ruleTemplate dtable="top/desky/example/drools/templates/xls/ticket.xls"
-                      template="top/desky/example/drools/templates/xls/ticket.drt"
+    <kbase name="templateTicket" packages="top.desky.example.drools.templates">
+        <ruleTemplate dtable="top/desky/example/drools/templates/ticket.xls"
+                      template="top/desky/example/drools/templates/ticket.drt"
                       row="3"
                       col="2"/>
         <ksession name="templateTicket" type="stateless"/>
     </kbase>
-    <kbase name="xlsTicket" packages="top.desky.example.drools.xls">
+    <kbase name="excelTicket" packages="top.desky.example.drools.xls">
         <ruleTemplate dtable="top/desky/example/drools/xls/ticket.xls"
-                      template="top/desky/example/drools/templates/xls/ticket.drt"
+                      template="top/desky/example/drools/templates/ticket.drt"
                       row="3"
                       col="2"/>
-        <ksession name="xlsTicket" type="stateless"/>
+        <ksession name="excelTicket" type="stateless"/>
     </kbase>
 </kmodule>

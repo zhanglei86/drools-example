@@ -1,4 +1,4 @@
-package top.desky.example.drools.templates.xls;
+package top.desky.example.drools.templates;
 
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;

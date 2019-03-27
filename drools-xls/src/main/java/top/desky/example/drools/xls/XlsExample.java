@@ -9,7 +9,7 @@ public class XlsExample {
     public static void main(String[] args) {
         KieServices kieServices = KieServices.Factory.get();
         KieContainer kContainer = kieServices.getKieClasspathContainer();
-        StatelessKieSession ksession = kContainer.newStatelessKieSession("xlsTicket");
+        StatelessKieSession ksession = kContainer.newStatelessKieSession("excelTicket");
 
         Ticket ticket = new Ticket("欧美");
         System.out.printf("Before: %s\n", ticket);
