@@ -19,19 +19,22 @@ public class SimpleDrools {
         KieContainer kc = ks.getKieClasspathContainer();
 
         KieSession ksession = kc.newKieSession("SimpleSession");
+        runRule(ksession);
+    }
 
+    private static void runRule(KieSession ksession) {
         ksession.addEventListener(new DebugAgendaEventListener());
         ksession.addEventListener(new DebugRuleRuntimeEventListener());
 
-        Person zhangsan = new Person("张三", (byte) 30);
-        ksession.insert(zhangsan);
+        Person zhang3 = new Person("张三", (byte) 30);
+        ksession.insert(zhang3);
 
         // and fire the rules
         int total = ksession.fireAllRules();
         ksession.dispose();
 
         log.info("执行了 {} 条规则", total);
-        log.info("执行后的姓名:{}", zhangsan.getName());
+        log.info("执行后的姓名:{}", zhang3.getName());
     }
 
 }

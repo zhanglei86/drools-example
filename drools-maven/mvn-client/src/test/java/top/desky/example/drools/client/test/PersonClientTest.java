@@ -1,7 +1,6 @@
-package top.desky.example.drools.client;
+package top.desky.example.drools.client.test;
 
-import lombok.extern.slf4j.Slf4j;
-import org.appformer.maven.integration.embedder.MavenSettings;
+import org.junit.Test;
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieScanner;
 import org.kie.api.builder.ReleaseId;
@@ -14,18 +13,32 @@ import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import top.desky.example.drools.fact.Person;
 
-import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 /**
- * https://docs.jboss.org/drools/release/7.7.0.Final/drools-docs/html_single/index.html#_maven_versions_and_dependencies
+ * Created by zealous on 2019-03-27.
  */
-@Slf4j
-public class PersonAutoUpdateClient {
-    private static final String MVN_SETTING = "/Volumes/IntelSSD/Dev/apache-maven-3.5.0/conf/settings.xml";
+public class PersonClientTest extends BaseTestCase {
 
-    public static void main(final String[] args) {
-        System.setProperty(MavenSettings.CUSTOM_SETTINGS_PROPERTY, MVN_SETTING);
+    /**
+     * simple
+     */
+    @Test
+    public void test1() {
+        KieServices kieServices = KieServices.Factory.get();
+        ReleaseId releaseId = kieServices.newReleaseId("top.desky.example.drools", "mvn-rules", "0.0.1");
+        KieContainer kieContainer = kieServices.newKieContainer(releaseId);
 
+        KieSession ksession = kieContainer.newKieSession("PersonRules");
+        runRule(ksession);
+    }
+
+    /**
+     * auto update
+     * https://docs.jboss.org/drools/release/7.7.0.Final/drools-docs/html_single/index.html#_maven_versions_and_dependencies
+     */
+    @Test
+    public void test2() throws Exception {
         KieServices kieServices = KieServices.Factory.get();
         ReleaseId releaseId = kieServices.newReleaseId("top.desky.example.drools", "mvn-rules", "[0.0.1,)");
         KieContainer kieContainer = kieServices.newKieContainer(releaseId);
@@ -50,27 +63,23 @@ public class PersonAutoUpdateClient {
         log.info("第一次主动执行:");
         runRule(kieContainer.newKieSession("PersonRules"));
         log.info("测试时，你可以修改 drools-rules 项目，然后 mvn install 到本地仓库来查看变化");
-        log.info("按下任何键退出！");
-        try {
-            System.in.read();
-            log.info("退出！");
-        } catch (IOException e) {
-        }
+        log.warn("睡5分钟后退出！");
+        TimeUnit.SECONDS.sleep(10);
     }
 
-    public static void runRule(KieSession ksession) {
+    private void runRule(KieSession ksession) {
         ksession.addEventListener(new DebugAgendaEventListener());
         ksession.addEventListener(new DebugRuleRuntimeEventListener());
 
-        Person zhangsan = new Person("张三", (byte) 30);
-        ksession.insert(zhangsan);
+        Person zhang3 = new Person("张三", (byte) 30);
+        ksession.insert(zhang3);
 
         // and fire the rules
         int total = ksession.fireAllRules();
         ksession.dispose();
 
         log.info("执行了 {} 条规则", total);
-        log.info("执行后的姓名:{}", zhangsan.getName());
+        log.info("执行后的姓名:{}", zhang3.getName());
     }
 
 }

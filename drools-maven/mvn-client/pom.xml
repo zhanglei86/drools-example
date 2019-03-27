@@ -12,6 +12,7 @@
     <version>1.0</version>
 
     <dependencies>
+        <!-- fact -->
         <dependency>
             <groupId>top.desky.example.drools</groupId>
             <artifactId>mvn-fact</artifactId>
@@ -31,13 +32,22 @@
             <groupId>org.kie</groupId>
             <artifactId>kie-ci</artifactId>
         </dependency>
-        <!--http://mvel.documentnode.com/-->
         <dependency>
             <groupId>org.mvel</groupId>
             <artifactId>mvel2</artifactId>
             <version>2.3.2.Final</version>
         </dependency>
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.56</version>
+        </dependency>
     </dependencies>
 
 </project>
