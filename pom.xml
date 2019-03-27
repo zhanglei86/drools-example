@@ -43,7 +43,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Logging -->
+        <!-- log -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -55,6 +55,7 @@
             <version>1.2.3</version>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <!-- 全局打包，jdk版本 -->
