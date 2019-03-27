@@ -1,10 +1,12 @@
-package top.desky.example.drools.templates;
+package top.desky.example.drools.test;
 
+import lombok.extern.slf4j.Slf4j;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.StatelessKieSession;
 import top.desky.example.drools.xls.Ticket;
 
+@Slf4j
 public class TemplateExample {
 
     public static void main(String[] args) {

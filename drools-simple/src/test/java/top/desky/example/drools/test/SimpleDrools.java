@@ -1,17 +1,17 @@
-package top.desky.example.drools.simple;
+package top.desky.example.drools.test;
 
+import lombok.extern.slf4j.Slf4j;
 import org.kie.api.KieServices;
 import org.kie.api.event.rule.DebugAgendaEventListener;
 import org.kie.api.event.rule.DebugRuleRuntimeEventListener;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import top.desky.example.drools.simple.Person;
 
+@Slf4j
 public class SimpleDrools {
-    public static final Logger L = LoggerFactory.getLogger(SimpleDrools.class);
 
-    public static final void main(final String[] args) {
+    public static void main(final String[] args) {
         // KieServices is the factory for all KIE services
         KieServices ks = KieServices.Factory.get();
 
@@ -30,9 +30,8 @@ public class SimpleDrools {
         int total = ksession.fireAllRules();
         ksession.dispose();
 
-        L.info("执行了 {} 条规则", total);
-        L.info("执行后的姓名:{}", zhangsan.getName());
+        log.info("执行了 {} 条规则", total);
+        log.info("执行后的姓名:{}", zhangsan.getName());
     }
-
 
 }

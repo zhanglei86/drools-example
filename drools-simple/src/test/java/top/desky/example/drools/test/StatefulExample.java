@@ -1,9 +1,13 @@
-package top.desky.example.drools.firealarm;
+package top.desky.example.drools.test;
 
+import lombok.extern.slf4j.Slf4j;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.rule.FactHandle;
+import top.desky.example.drools.firealarm.Fire;
+import top.desky.example.drools.firealarm.Room;
+import top.desky.example.drools.firealarm.Sprinkler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,6 +15,7 @@ import java.util.Map;
 /**
  * https://docs.jboss.org/drools/release/7.7.0.Final/drools-docs/html_single/index.html#_stateful_knowledge_session
  */
+@Slf4j
 public class StatefulExample {
 
     public static void main(String[] args) {

@@ -1,15 +1,20 @@
-package top.desky.example.drools.stateless;
+package top.desky.example.drools.test;
 
+import lombok.extern.slf4j.Slf4j;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.StatelessKieSession;
+import top.desky.example.drools.stateless.Applicant;
+import top.desky.example.drools.stateless.Application;
 
 import java.util.Arrays;
 
 /**
  * https://docs.jboss.org/drools/release/7.7.0.Final/drools-docs/html_single/index.html#_stateless_knowledge_session
  */
+@Slf4j
 public class StatelessExample {
+
     public static void main(String[] args) {
         KieServices kieServices = KieServices.Factory.get();
         KieContainer kContainer = kieServices.getKieClasspathContainer();
