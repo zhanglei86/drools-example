@@ -24,9 +24,9 @@ public class GwDetail {
     private String desc;
 
     public static List<GwDetail> genGws() {
-        GwDetail p1 = GwDetail.builder().uid(11).gw(13).txnType(GwDetail.CONSUME).build();
-        GwDetail p2 = GwDetail.builder().uid(22).gw(23).txnType(GwDetail.PRESENTED).build();
-        GwDetail p3 = GwDetail.builder().uid(33).gw(33).txnType(GwDetail.CONSUME).build();
+        GwDetail p1 = GwDetail.builder().uid(11).gw(13).txnType(CONSUME).build();
+        GwDetail p2 = GwDetail.builder().uid(22).gw(23).txnType(PRESENTED).build();
+        GwDetail p3 = GwDetail.builder().uid(33).gw(33).txnType(CONSUME).build();
         return Arrays.asList(p1, p2, p3);
     }
 

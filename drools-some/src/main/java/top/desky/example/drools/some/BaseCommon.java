@@ -14,9 +14,11 @@ import top.desky.example.drools.some.dto.GwDetail;
 
 import java.util.List;
 
+/**
+ * 基础方法
+ */
 public class BaseCommon {
-    protected static Logger logger;
-
+    private static Logger logger;
     protected KieSession kSession;
 
     public BaseCommon(String kSessionName) {
@@ -31,7 +33,8 @@ public class BaseCommon {
     }
 
     public static void printInfo(Object info) {
-        logger.info(JSON.toJSONString(info));
+        String str = JSON.toJSONString(info);
+        printInfo(str);
     }
 
     public static void printInfo(String info) {
@@ -46,9 +49,7 @@ public class BaseCommon {
         if (objList.isEmpty()) {
             return;
         }
-        for (Object obj : objList) {
-            kSession.insert(obj);
-        }
+        objList.forEach(obj -> kSession.insert(obj));
     }
 
     protected void setGlobal(String identifier, Object value) {
@@ -59,7 +60,7 @@ public class BaseCommon {
         try {
             int count = kSession.fireAllRules();
             printInfo("触发规则数：" + count);
-        } catch (Throwable t) {
+        } catch (RuntimeException t) {
             logger.error("执行规则出错：", t);
         }
     }
@@ -68,7 +69,7 @@ public class BaseCommon {
         try {
             int count = kSession.fireAllRules(agendaFilter);
             printInfo("触发规则数：" + count);
-        } catch (Throwable t) {
+        } catch (RuntimeException t) {
             logger.error("执行规则出错：", t);
         }
     }
