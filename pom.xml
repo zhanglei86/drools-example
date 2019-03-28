@@ -13,6 +13,7 @@
         <module>drools-simple</module>
         <module>drools-xls</module>
         <module>drools-maven</module>
+        <module>drools-some</module>
     </modules>
 
     <properties>
