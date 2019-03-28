@@ -1,0 +1,13 @@
+package factHandle;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+import top.desky.example.drools.some.dto.*
+
+rule "factHandle1"
+agenda-group "fact-handler-group"
+    when	
+    p : GwDetail(gw > 10)
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+        printInfo(p);
+end

@@ -1,0 +1,16 @@
+package dto;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+import top.desky.example.drools.some.dto.*
+
+rule "internally1"
+    when
+        gwDetail : GwDetail(gw<20)
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+        gwDetail.setGw(gwDetail.getGw() + 1);
+        GwDetail pd = GwDetail.builder().gw(19).uid(99).build();
+        insert(pd);
+       // retract(gwDetail);
+        //update(gwDetail);
+end

@@ -1,0 +1,19 @@
+package dto;
+
+import function top.desky.example.drools.some.BaseCommon.printInfo;
+
+global java.lang.String strParam;
+global java.util.List listParam;
+
+rule "global1"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+        printInfo(strParam);
+    end
+rule "global2"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+        printInfo(listParam);
+end

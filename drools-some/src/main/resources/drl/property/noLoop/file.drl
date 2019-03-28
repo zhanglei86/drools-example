@@ -1,0 +1,23 @@
+package property;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+import top.desky.example.drools.some.dto.*
+
+rule "noLoop1"
+no-loop true
+    when
+    gwDetail : GwDetail(gw<20)
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName() + ";gw值：" + gwDetail.getGw());
+        gwDetail.setGw(gwDetail.getGw() + 1);
+        update(gwDetail);
+end
+
+rule "noLoop2"
+    when
+    gwDetail : GwDetail(gw<20)
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName() + ";gw值：" + gwDetail.getGw());
+        gwDetail.setGw(gwDetail.getGw() + 1);
+        update(gwDetail);
+end

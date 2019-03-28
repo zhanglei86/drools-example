@@ -1,0 +1,24 @@
+package property;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+
+rule "activationGroup1"
+activation-group "activationGroupName"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "activationGroup2"
+activation-group "activationGroupName"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "activationGroup3"
+activation-group "activationGroupName"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end

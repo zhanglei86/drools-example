@@ -1,0 +1,24 @@
+package property;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+
+rule "dateEffective1"
+date-effective "17-四月-2018"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "dateEffective2"
+date-effective "18-四月-2018"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "dateEffective3"
+date-effective "19-四月-2018"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end

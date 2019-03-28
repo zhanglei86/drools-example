@@ -1,0 +1,22 @@
+package property;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+
+rule "enabled1"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "enabled2"
+enabled false
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "enabled3"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end

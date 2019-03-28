@@ -1,0 +1,16 @@
+package dto;
+
+import function top.desky.example.drools.some.BaseCommon.printInfo;
+import top.desky.example.drools.some.dto.*
+
+query "query-1"
+    gwDetail : GwDetail(gw > 15)
+end
+
+query "query-2"(String typeParam)
+    gwDetail : GwDetail(txnType == typeParam)
+end
+
+query "query-3"(String typeParam)
+    gwDetail : GwDetail(gw > 15, txnType == typeParam)
+end

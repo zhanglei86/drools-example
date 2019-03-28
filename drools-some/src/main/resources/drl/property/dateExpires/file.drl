@@ -1,0 +1,24 @@
+package property;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+
+rule "dateExpires1"
+date-expires "2018-04-14"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "dateExpires2"
+date-expires "2018-04-15"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "dateExpires3"
+date-expires "2018-04-16"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end

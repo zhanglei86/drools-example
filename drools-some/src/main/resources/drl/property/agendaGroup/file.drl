@@ -1,0 +1,24 @@
+package property;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+
+rule "agendaGroup1"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "agendaGroup2"
+agenda-group "agendaGroup2"
+auto-focus true
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "agendaGroup3"
+agenda-group "agendaGroup3"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end

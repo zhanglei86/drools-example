@@ -1,0 +1,24 @@
+package property;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+
+rule "ruleFlowGroup1"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "ruleFlowGroup2"
+ruleflow-group "ruleFlowGroup2"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "ruleFlowGroup3"
+ruleflow-group "ruleFlowGroup2"
+auto-focus true
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end

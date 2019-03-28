@@ -34,6 +34,10 @@ public class BaseCommon {
         logger.info(JSON.toJSONString(info));
     }
 
+    public static void printInfo(String info) {
+        logger.info(info);
+    }
+
     protected FactHandle insertObject(Object obj) {
         return kSession.insert(obj);
     }

@@ -1,0 +1,22 @@
+package dto;
+
+import function top.desky.example.drools.some.BaseCommon.printInfo;
+
+function void print(String ruleName) {
+	printInfo("命中的规则名：" + ruleName);
+}
+
+function void print2(String ruleName) {
+	printInfo("命中的规则名：" + ruleName);
+}
+
+rule "function1"
+    when
+    then
+        print(drools.getRule().getName());
+    end
+rule "function2"
+    when
+    then
+        print2(drools.getRule().getName());
+end

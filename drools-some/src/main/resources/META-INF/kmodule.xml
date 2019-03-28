@@ -5,4 +5,57 @@
         <ksession name="helloSession"/>
     </kbase>
 
+    <!-- aws -->
+    <kbase name="factHandleBase" packages="drl.fact">
+        <ksession name="factHandleSession"/>
+    </kbase>
+    <kbase name="functionBase" packages="drl.function">
+        <ksession name="functionSession"/>
+    </kbase>
+    <kbase name="globalBase" packages="drl.global">
+        <ksession name="globalSession"/>
+    </kbase>
+    <kbase name="internallyBase" packages="drl.internally">
+        <ksession name="internallySession"/>
+    </kbase>
+    <kbase name="queryBase" packages="drl.query">
+        <ksession name="querySession"/>
+    </kbase>
+
+    <!-- property -->
+    <kbase name="activationGroupBase" packages="drl.property.activationGroup">
+        <ksession name="activationGroupSession"/>
+    </kbase>
+    <kbase name="agendaGroupBase" packages="drl.property.agendaGroup">
+        <ksession name="agendaGroupSession"/>
+    </kbase>
+    <kbase name="dateEffectiveBase" packages="drl.property.dateEffective">
+        <ksession name="dateEffectiveSession"/>
+    </kbase>
+    <kbase name="dateEffectiveFormatBase" packages="drl.property.dateEffectiveFormat">
+        <ksession name="dateEffectiveFormatSession"/>
+    </kbase>
+    <kbase name="dateExpiresBase" packages="drl.property.dateExpires">
+        <ksession name="dateExpiresSession"/>
+    </kbase>
+    <kbase name="durationBase" packages="drl.property.duration">
+        <ksession name="durationSession"/>
+    </kbase>
+    <kbase name="enabledBase" packages="drl.property.enabled">
+        <ksession name="enabledSession"/>
+    </kbase>
+    <kbase name="lockOnActiveBase" packages="drl.property.lockOnActive">
+        <ksession name="lockOnActiveSession"/>
+    </kbase>
+    <kbase name="noLoopBase" packages="drl.property.noLoop">
+        <ksession name="noLoopSession"/>
+    </kbase>
+    <kbase name="ruleFlowGroupBase" packages="drl.property.ruleFlowGroup">
+        <ksession name="ruleFlowGroupSession"/>
+    </kbase>
+    <kbase name="salienceBase" packages="drl.property.salience">
+        <ksession name="salienceSession"/>
+    </kbase>
+
+    <!-- other -->
 </kmodule>

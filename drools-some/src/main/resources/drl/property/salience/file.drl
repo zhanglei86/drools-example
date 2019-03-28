@@ -1,0 +1,23 @@
+package property;
+
+import static top.desky.example.drools.some.BaseCommon.printInfo;
+
+rule "salience1"
+salience -1
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "salience2"
+salience 2
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
+
+rule "salience3"
+    when
+    then
+        printInfo("命中的规则名：" + drools.getRule().getName());
+end
